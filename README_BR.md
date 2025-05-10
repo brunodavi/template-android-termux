@@ -8,7 +8,8 @@ Este template foi criado para facilitar a configuração de um ambiente Android 
 Antes de utilizar o template, é necessário atualizar os pacotes do Termux e instalar as dependências necessárias:
 
 ```bash
-apt update && apt upgrade
+pkg update
+pkg upgrade # opcional
 pkg install openjdk-17 aapt2
 ```
 
