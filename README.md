@@ -1,4 +1,4 @@
-# Android SDK Template for Termux
+# Android Template for Termux
 
 [🇧🇷](README_BR.md)
 
