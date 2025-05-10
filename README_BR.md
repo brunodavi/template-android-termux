@@ -1,4 +1,4 @@
-# Template Android SDK para Termux
+# Template Android para Termux
 
 Este template foi criado para facilitar a configuração de um ambiente Android dentro do **Termux**. Ele instala automaticamente o SDK do Android ao executar `./gradlew`, tornando o processo simples e portátil para desenvolvimento direto do terminal Android.
 
