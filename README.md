@@ -10,7 +10,8 @@ This GitHub template simplifies the process of setting up an Android development
 Before using the template, make sure to update your packages and install the necessary dependencies in Termux:
 
 ```bash
-apt update && apt upgrade
+pkg update
+pkg upgrade # optional
 pkg install openjdk-17 aapt2
 ```
 
