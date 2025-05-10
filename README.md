@@ -29,6 +29,32 @@ To set up the SDK and dependencies automatically, simply run:
 On the first run, Gradle will download the Android SDK and required build tools based on the configuration defined in `gradle.properties`.
 
 
+### How to Build the APK
+
+Once the dependencies are set up, you can build the APK using the following command:
+
+```bash
+./gradlew assembleDebug
+```
+
+The APK file will be generated at:
+
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
+
+To install it on your device:
+
+1. Copy the APK to your Downloads folder:
+
+   ```bash
+   cp app/build/outputs/apk/debug/app-debug.apk /sdcard/Download/
+   ```
+2. Open a file manager on your phone.
+3. Navigate to the **Download** folder.
+4. Tap on the APK file to install it (make sure unknown sources are allowed).
+
+
 ## Configuration via `gradle.properties`
 
 The core project settings and Android dependencies are configured in the `gradle.properties` file:

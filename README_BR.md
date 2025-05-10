@@ -27,6 +27,32 @@ Para iniciar a configuração automática do SDK e preparar o ambiente, basta ex
 Na primeira execução, o Gradle irá baixar o SDK do Android e todas as ferramentas necessárias, de acordo com as configurações no `gradle.properties`.
 
 
+### Como Compilar o APK
+
+Depois que todas as dependências estiverem configuradas, você pode compilar o APK com o comando:
+
+```bash
+./gradlew assembleDebug
+```
+
+O arquivo APK será gerado no seguinte caminho:
+
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
+
+Para instalar no seu dispositivo:
+
+1. Copie o APK para a pasta de downloads:
+
+   ```bash
+   cp app/build/outputs/apk/debug/app-debug.apk /sdcard/Download/
+   ```
+2. Abra um gerenciador de arquivos no celular.
+3. Vá até a pasta **Download**.
+4. Toque no arquivo APK para iniciar a instalação (certifique-se de permitir apps de fontes desconhecidas).
+
+
 ## Configuração via `gradle.properties`
 
 As principais informações e dependências do projeto são definidas no arquivo `gradle.properties`:
