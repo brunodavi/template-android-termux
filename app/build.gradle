@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace APP_PACKAGE
+    compileSdkVersion Integer.parseInt(ANDROID_COMPILE_SDK_VERSION)
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId APP_PACKAGE
+        versionName APP_VERSION
+        versionCode Integer.parseInt(APP_VERSION_CODE)
+        minSdkVersion Integer.parseInt(APP_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(APP_TARGET_SDK_VERSION)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}

@@ -1,0 +1,55 @@
+def setExtProps(List<String> props) {
+    props.each { prop ->
+        if (!project.hasProperty(prop)) {
+            throw new GradleException("Required property '${prop}' in gradle.properties or local.properties")
+        }
+        ext.set(prop, project.property(prop))
+    }
+}
+
+// Chamada da função
+setExtProps([
+    'APP_PACKAGE',
+    'APP_VERSION',
+    'APP_VERSION_CODE',
+    'APP_MIN_SDK_VERSION',
+    'APP_TARGET_SDK_VERSION',
+    'ANDROID_COMPILE_SDK_VERSION',
+    'ANDROID_BUILD_TOOLS_VERSION',
+    'ANDROID_GRADLE_PLUGIN_VERSION',
+])
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath "com.quittle.setup-android-sdk:com.quittle.setup-android-sdk.gradle.plugin:3.1.0"
+        classpath "com.android.tools.build:gradle:$ANDROID_GRADLE_PLUGIN_VERSION"
+    }
+}
+
+apply plugin: 'com.quittle.setup-android-sdk'
+
+setupAndroidSdk {
+    packages "platforms;android-${ANDROID_COMPILE_SDK_VERSION}",
+             "build-tools;${ANDROID_BUILD_TOOLS_VERSION}",
+             "platform-tools",
+             "cmdline-tools;latest"
+
+    def licensesDir = System.getenv("LICENSES_DIR")
+    if (licensesDir) {
+        licensesDirectory file(licensesDir)
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
